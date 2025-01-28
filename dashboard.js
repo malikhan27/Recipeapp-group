@@ -1,8 +1,20 @@
 let datecontent = document.getElementById("current-year")
-if(datecontent){
-  datecontent.textContent = new Date().getFullYear();
-}
 let recipesdiv = document.getElementById("recipes");
+let recipename = document.getElementById("recipe-name");
+let recipeingre = document.getElementById("ingredients");
+let recipemethod = document.getElementById("method");
+let postbtn = document.getElementById("post-btn");
+
+
+
+
+
+
+
+
+
+
+
 
 const chineseFoodRecipes = {
   dish1: {
@@ -213,4 +225,38 @@ for (name in chineseFoodRecipes) {
 </div>
     `;
 }
+}
+
+
+async function dataEntry(params) {
+  console.log(`${recipename.value} ${recipeingre.value} ${recipemethod.value} `)
+ let data = localStorage.getItem("currentuserino")
+ data=JSON.parse(data)
+  try {
+    const { error } = await supabase
+  .from('posts')
+  .insert({ ingredients: recipeingre.value, name: recipename.value,methods:recipemethod.value,UID:data.uid })
+  
+  if(error) throw error  
+  } catch (error) {
+    console.log(error)
+    
+  }
+  finally{
+    Swal.fire({
+      title: "POST UPDATED Successfully!",
+      icon: "success",
+      draggable: true,
+    });
+  }
+}
+
+postbtn.addEventListener('click',dataEntry)
+
+
+
+
+
+if(datecontent){
+  datecontent.textContent = new Date().getFullYear();
 }

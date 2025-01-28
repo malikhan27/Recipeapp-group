@@ -18,9 +18,6 @@ async function signup() {
 
     if (error) throw error;
     if (data) {
-        console.log(data)
-      alert("Check your email");
-      console.log(data.user.email);
       try {
         const { data: userData, error: userError } = await supabase
           .from("users")
@@ -116,34 +113,7 @@ if (logoutbtn) {
   logoutbtn.addEventListener("click", logout);
 }
 
-async function checkSession() {
-  try {
-    const { data, error } = await supabase.auth.getSession();
-    if (data) {
-      console.log(data);
-    }
-    const authPages = ["/index.html", "/login.html", "/"];
-    const currentPath = window.location.pathname;
-    const isAuthPage = authPages.some((page) => page.includes(currentPath));
 
-    const { session } = data;
 
-    if (session) {
-      if (isAuthPage) {
-        window.location.href = "/dashboard.html";
-      }
-    } else {
-      if (!isAuthPage) {
-        window.location.href = "/login.html";
-      }
-    }
 
-    console.log(session);
-  } catch (error) {
-    console.log(error);
-  }
-}
 
-window.onload = checkSession();
-
-window.checkSession = checkSession;
