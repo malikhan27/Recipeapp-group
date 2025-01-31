@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="dashboard.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>CHU FANG</title>
 </head>
 
@@ -33,7 +34,7 @@
                             <a class="" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="navbar-button">
-                            <a class="" href="#">My Recipes</a>
+                            <a class="" href="userprofile.html">My Recipes</a>
                         </li>
                         <li class="navbar-button">
                             <a class="" href="#">Public Feed</a>
@@ -44,8 +45,8 @@
 
 
                     </ul>
-                    <div class="d-flex">
-                        <button id="logout-btn" class="btn btn-outline-dark ms-2">
+                    <div class="d-flex justify-content-center">
+                        <button id="logout-btn" class="btn btn-outline-dark">
                             logout <i class="fa-solid fa-right-from-bracket"></i>
                         </button>
                     </div>
@@ -86,7 +87,7 @@
                                     <textarea class="form-control" name="recipe-method" id="method"></textarea>
 
                                     <label for="picture" class="form-label">ADD A PICTURE(optional)</label>
-                                    <input id="picture" class="form-control" type="file">
+                                    <input id="post-file" class="form-control" type="file">
                                     <div class="mt-1 d-flex flex-column gap-2 justify-content-center align-items-center">
                                         <button class=" btn btn-outline-dark" id="post-btn" type="button"> POST</button>
                                     </div>
@@ -137,49 +138,6 @@
         </div>
 
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -288,6 +246,10 @@
     <script src="bootstrap.js"></script>
     <script src="bundle.js"></script>
     <script src="popper.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 
 </body>
 
