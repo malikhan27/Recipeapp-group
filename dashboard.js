@@ -1,24 +1,14 @@
-let datecontent = document.getElementById("current-year")
-let recipesdiv = document.getElementById("recipes");
-let recipename = document.getElementById("recipe-name");
-let recipeingre = document.getElementById("ingredients");
-let recipemethod = document.getElementById("method");
-let postbtn = document.getElementById("post-btn");
-
-
-
-
-
-
-
-
-
-
-
+let datecontent = document.getElementById ('current-year');
+let recipesdiv = document.getElementById ('recipes');
+let recipename = document.getElementById ('recipe-name');
+let recipeingre = document.getElementById ('ingredients');
+let recipemethod = document.getElementById ('method');
+let postbtn = document.getElementById ('post-btn');
+let post_file = document.getElementById ('post-file');
 
 const chineseFoodRecipes = {
-  dish1: {
-    name: "Kung Pao Chicken",
+  dish2: {
+    name: 'Kung Pao',
     ingredients: `
         - 500g chicken breast, diced
         - 2 tablespoons vegetable oil
@@ -42,10 +32,10 @@ const chineseFoodRecipes = {
         6. Pour the sauce over the chicken mixture and cook for another 2 minutes.
         7. Stir in peanuts and serve hot.
       `,
-      image:'https://www.oliveandmango.com/images/uploads/2020_04_27_takeout_style_kung_pao_chicken_1.jpg'
+    image: 'https://www.oliveandmango.com/images/uploads/2020_04_27_takeout_style_kung_pao_chicken_1.jpg',
   },
-  dish2: {
-    name: "Sweet and Sour Pork",
+  dish1: {
+    name: 'Sweet and Sour Pork',
     ingredients: `
         - 500g pork tenderloin, cut into cubes
         - 1/2 cup cornstarch
@@ -68,10 +58,10 @@ const chineseFoodRecipes = {
         7. Add the fried pork and toss everything together.
         8. Serve hot.
       `,
-      image:'https://tasteasianfood.com/wp-content/uploads/2019/05/sweet-and-sour-pork-featured-image.jpg'
+    image: 'https://tasteasianfood.com/wp-content/uploads/2019/05/sweet-and-sour-pork-featured-image.jpg',
   },
   dish3: {
-    name: "Fried Rice",
+    name: 'Fried Rice',
     ingredients: `
         - 2 cups cooked rice (preferably cold)
         - 2 tablespoons vegetable oil
@@ -92,10 +82,10 @@ const chineseFoodRecipes = {
         6. Stir in soy sauce, sesame oil, and green onions.
         7. Cook for an additional 2-3 minutes, then serve.
       `,
-      image:'	https://static.sooperchef.pk/topics/2018/06/Chicken-Shashlik-Recipe-550x375.jpg'
+    image: '	https://static.sooperchef.pk/topics/2018/06/Chicken-Shashlik-Recipe-550x375.jpg',
   },
   dish4: {
-    name: "Mapo Tofu",
+    name: 'Mapo Tofu',
     ingredients: `
         - 400g firm tofu, cut into cubes
         - 200g ground pork
@@ -118,13 +108,11 @@ const chineseFoodRecipes = {
         7. Stir in cornstarch mixture to thicken the sauce.
         8. Cook for an additional 2 minutes, then serve hot.
       `,
-      image:'	https://img.delicious.com.au/mGxuLbz0/del/2015/10/eggplant-and-red-bean-mapo-tofu-14934-2.jpg'
+    image: '	https://img.delicious.com.au/mGxuLbz0/del/2015/10/eggplant-and-red-bean-mapo-tofu-14934-2.jpg',
   },
-  dish5:
-    {
-      name: "General Tso's Chicken",
-      ingredients: 
-        `- 500g chicken breast, cut into bite-sized pieces
+  dish5: {
+    name: "General Tso",
+    ingredients: `- 500g chicken breast, cut into bite-sized pieces
         - 1/2 cup cornstarch
         - 1/4 cup soy sauce
         - 1 tablespoon rice vinegar
@@ -137,9 +125,8 @@ const chineseFoodRecipes = {
         - 2 tablespoons vegetable oil
         - 1 tablespoon cornstarch mixed with 2 tablespoons water (for thickening)
         - 1/2 cup water
-        - 1 green onion, chopped (for garnish)`
-      ,
-      method: `
+        - 1 green onion, chopped (for garnish)`,
+    method: `
         1. Toss chicken pieces in cornstarch to coat evenly.
         2. Heat vegetable oil in a pan over medium-high heat, then fry the chicken until crispy and golden. Remove and set aside.
         3. In the same pan, add sesame oil, garlic, ginger, and dried red chilies. Stir-fry for about 1 minute.
@@ -148,11 +135,11 @@ const chineseFoodRecipes = {
         6. Add the fried chicken back into the pan and toss to coat in the sauce.
         7. Garnish with chopped green onions and serve hot.
       `,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMIp78_E7a9W6lMfAbVdr_SkycQK30WT4tsg&s"
-    },
-    dish6:{
-      name: "Chicken Chow Mein",
-      ingredients: `
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMIp78_E7a9W6lMfAbVdr_SkycQK30WT4tsg&s',
+  },
+  dish6: {
+    name: 'Chicken Chow Mein',
+    ingredients: `
         - 500g chicken breast, thinly sliced
         - 200g chow mein noodles (or egg noodles)
         - 2 tablespoons vegetable oil
@@ -168,7 +155,7 @@ const chineseFoodRecipes = {
         - 1 teaspoon cornstarch mixed with 2 tablespoons water (for thickening)
         - 2-3 green onions, chopped (for garnish)
       `,
-      method: `
+    method: `
         1. Cook the chow mein noodles according to package instructions, then drain and set aside.
         2. Heat vegetable oil in a large pan or wok over medium-high heat.
         3. Add the sliced chicken breast and stir-fry until golden brown and cooked through. Remove and set aside.
@@ -179,28 +166,29 @@ const chineseFoodRecipes = {
         8. Add the chicken back into the pan and toss everything together to combine.
         9. Garnish with chopped green onions and serve hot.
       `,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIwbrgg-G4pEcpobany2rblsEXFdJyjIMpHg&s"
-    }
-    
-  }
-;
-
-let id=1
-let accordiontarget=5
-let accordiontarget2=10
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIwbrgg-G4pEcpobany2rblsEXFdJyjIMpHg&s',
+  },
+};
+let id = 1;
+let accordiontarget = 5;
+let accordiontarget2 = 10;
 
 for (name in chineseFoodRecipes) {
-  id++
-  accordiontarget++
-  accordiontarget2++
-  console.log(id)
-  if(recipesdiv){
-  recipesdiv.innerHTML += `<div class="col-12 col-md-4  d-flex mb-3 justify-content-center">
- <div class="card" style="width: 75%;">
+  id++;
+  accordiontarget++;
+  accordiontarget2++;
+  console.log (id);
+  if (recipesdiv) {
+    recipesdiv.innerHTML += `<div class="col-12 col-md-4  d-flex mb-3 justify-content-center" data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0">
+ <div class="card" style="width: 90%;">
   <img src=${chineseFoodRecipes[name].image} class="card-img-top" alt="...">
 
-  <div class="card-body text-center " style="background-color:#FEE0D6; color:#ac4251">
-    <h3>${chineseFoodRecipes[name].name}</h3>
+  <div class="card-body text-center" style="background-color:#FEE0D6; color:#ac4251">
+ 
+    <h3 class="">${chineseFoodRecipes[name].name}</h3>
     <div class="accordion accordion-flush" id=accordionFlushExample${id}>
   <div class="accordion-item">
     <h2 class="accordion-header">
@@ -223,40 +211,100 @@ for (name in chineseFoodRecipes) {
     </div>
   </div>
 </div>
+
     `;
-}
-}
-
-
-async function dataEntry(params) {
-  console.log(`${recipename.value} ${recipeingre.value} ${recipemethod.value} `)
- let data = localStorage.getItem("currentuserino")
- data=JSON.parse(data)
-  try {
-    const { error } = await supabase
-  .from('posts')
-  .insert({ ingredients: recipeingre.value, name: recipename.value,methods:recipemethod.value,UID:data.uid })
-  
-  if(error) throw error  
-  } catch (error) {
-    console.log(error)
-    
   }
-  finally{
-    Swal.fire({
-      title: "POST UPDATED Successfully!",
-      icon: "success",
+}
+
+async function dataEntry () {
+  console.log (
+    `${recipename.value} ${recipeingre.value} ${recipemethod.value} `
+  );
+  let data = localStorage.getItem ('currentuserinfo');
+  data = JSON.parse (data);
+  try {
+    const {data: postdata, error: posterror} = await supabase
+      .from ('posts')
+      .insert ({
+        ingredients: recipeingre.value,
+        name: recipename.value,
+        methods: recipemethod.value,
+        UID: data.uid,
+      })
+      .select ();
+
+    if (postdata) {
+      console.log (postdata[0].id);
+      if (post_file.files.length > 0) {
+        let imgfile=post_file.files[0]
+        try {
+
+          const { data: imgData, error:imgError } = await supabase
+  .storage
+  .from('media')
+  .upload(`${postdata[0].id}`, imgfile, {
+    cacheControl: '3600',
+    upsert: false
+  })
+          if(imgError) throw imgError
+
+          if (imgData){
+           try {
+            const { data: imageurlData } = supabase
+  .storage
+  .from('media')
+  .getPublicUrl(imgData.path)
+
+  if(imageurlData){
+    console.log(imageurlData)
+    try {
+      const { data:updatetabledata, error:updatetableerror } = await supabase
+  .from('posts')
+  .update({ imageUrl: imageurlData.publicUrl })
+  .eq('id', postdata[0].id)
+  .select()
+
+    } catch (error) {
+      
+    }
+  }
+
+            
+           } catch (error) {
+            
+           }
+
+          }
+
+        } catch (error) {
+          
+        }
+
+
+     
+      }
+    }
+  } catch (error) {
+    console.log (error);
+  } finally {
+    Swal.fire ({
+      title: 'POST UPDATED Successfully!',
+      icon: 'success',
       draggable: true,
     });
+    window.location.href="userprofile.html"
   }
 }
 
-postbtn.addEventListener('click',dataEntry)
-
-
-
-
-
-if(datecontent){
-  datecontent.textContent = new Date().getFullYear();
+if (postbtn) {
+  postbtn.addEventListener ('click', dataEntry);
 }
+if (datecontent) {
+  datecontent.textContent = new Date ().getFullYear ();
+}
+
+function tryplease (ali) {
+  console.log (ali);
+}
+
+tryplease ();

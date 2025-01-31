@@ -1,11 +1,7 @@
 
-// let currentuserinfo = {
-//   uid: data.user.id,
-//   email: data.user.email,
-// };
-// localStorage.setItem("currentuserino");
 
-async function userinfoGet(params) {
+
+async function userinfoGet() {
   try {
     const {
       data: { user },
@@ -84,4 +80,5 @@ async function checkSession() {
 window.getSession= checkSession
 
 window.onload= getSession
+window.onload= userinfoGet()
 
