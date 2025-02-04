@@ -50,7 +50,7 @@
 body{
     background-color: #FEE0D6;
     color: #71604E;
-    font-family: poppins , serif;
+    font-family: Smooch Sans;
 }
 .navbar-collapse {
     text-align: center;
@@ -90,7 +90,7 @@ a:hover{
 
 .navbar-button {
     padding: 5px 8px;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     color: #fff;
     background-color: #FEE0D6;
@@ -120,6 +120,8 @@ a:hover{
 
 .logo-text{
     color: #71604E;
+    font-size: 50px !important;
+    letter-spacing: 3px !important;
 }
 
 .sec-section{
@@ -135,7 +137,8 @@ img{
     background-color:#e65a6f}
 
     .accordion {
-        --bs-accordion-color: #dc3545;}
+        --bs-accordion-color: #dc3545;
+    font-size: 20px !important;}
 
 
         .accordion-flush>.accordion-item>.accordion-header .accordion-button, .accordion-flush>.accordion-item>.accordion-header .accordion-button.collapsed {
@@ -159,6 +162,8 @@ background: linear-gradient(342deg, rgba(252,198,206,1) 47%, rgba(255,255,255,1)
     font-family: Smooch Sans , serif !important;
     letter-spacing: 2px;
     word-spacing: 2px;
+    font-size: 70px;
+    text-align: center;
 }
 
 .btn-primary{
@@ -188,3 +193,25 @@ background: linear-gradient(342deg, rgba(252,198,206,1) 47%, rgba(255,255,255,1)
 
     }
 }
+
+
+@media screen and (max-width:400px)  {
+    .btn-primary{
+        background-color:#DE6E7E !important;
+        border-color:#e65a6f !important;
+        font-weight: 500 !important;
+        font-size: 8px;
+        border-radius: 50%;
+        padding: 8px 10px;
+    
+    }
+    .headings{
+        font-family: Smooch Sans , serif !important;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        font-size: 50px;
+        text-align: center;
+    }
+       
+       
+    }  
