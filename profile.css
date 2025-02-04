@@ -2,23 +2,56 @@
 
  @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@700&display=swap');
  body {
+    letter-spacing: 1px;
     background-color: #C4464A;
     color: #faebe7 ;
-    font-family: Poppins, serif;
+    font-family: Smooch Sans, serif;
     margin: 0;
     padding: 0;
+
+}
+.navbar-button {
+    padding: 5px 8px;
+    font-size: 20px;
+    font-weight: 600;
+    a{
+    color: #fff !important;
+    text-decoration: none;}
+    background-color:  #C4464A;
+    border: 2px solid  #C4464A;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
 }
 
-.logo-div{
+/* Hover effect */
+.navbar-button:hover {
 
     background-color: #FEE0D6;
+    border-color:#FEE0D6;
     a{
-        background-color: #C4464A;}
+        color:#C4464A !important ;
+        
+    }
+   
 }
+
+
+.navbar-button:active {
+   color: black;
+}
+
+
+
 
 
 .logo-text{
-    color: #71604E;
+    color: #FEE0D6;
+    font-size: 50px !important;
+    letter-spacing: 3px !important
 }
 
 
@@ -62,4 +95,70 @@
         color: #faebe7;
     }
    
+}
+
+.card{
+    font-size: 20px !important;
+}
+
+
+.footer {
+    /* background: #8B0000; Deep Red */
+   background: #FEE0D6;
+    color: #C4464A;
+    padding: 40px 0;
+    font-family: poppins;
+    border-top:1px solid whitesmoke;
+}
+.footer a {
+    /* color: #FFD700; Golden */
+    color: #C4464A;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+
+}
+.social-icons a {
+    margin: 0 10px;
+    padding:3px;
+    
+    font-size: 24px;
+    
+}
+.footer-logo {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+.logo{
+    width: 190px;
+    height: 120px;
+   
+}
+.list-unstyled li{
+    padding: 6px;
+    font-weight: 500;
+}
+.p{
+    font-size: 15px;
+    margin-top: 3px;
+ font-family:lora ;
+}
+
+.btn-outline-dark {
+    --bs-btn-color: #faebe7 ;
+    --bs-btn-border-color: #faebe7 ;
+    --bs-btn-hover-color:  #C4464A;
+    --bs-btn-hover-bg: #faebe7 ;
+    --bs-btn-hover-border-color: #faebe7 ;
+    --bs-btn-focus-shadow-rgb: 33, 37, 41;
+    --bs-btn-active-color:  #C4464A;
+    --bs-btn-active-bg: #faebe7 ;
+    --bs-btn-active-border-color: #faebe7 ;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #faebe7 ;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #faebe7 ;
+    --bs-gradient: none;
 }

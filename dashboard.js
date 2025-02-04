@@ -35,9 +35,9 @@ const chineseFoodRecipes = {
     image: 'https://www.oliveandmango.com/images/uploads/2020_04_27_takeout_style_kung_pao_chicken_1.jpg',
   },
   dish1: {
-    name: 'Sweet and Sour Pork',
+    name: 'Sweet and Sour chicken',
     ingredients: `
-        - 500g pork tenderloin, cut into cubes
+        - 500g chicken tenderloin, cut into cubes
         - 1/2 cup cornstarch
         - 2 tablespoons vegetable oil
         - 1 onion, sliced
@@ -49,16 +49,16 @@ const chineseFoodRecipes = {
         - 1/4 cup sugar
       `,
     method: `
-        1. Toss pork cubes in cornstarch to coat.
-        2. Heat vegetable oil in a pan and fry pork until crispy, then set aside.
+        1. Toss Chicken cubes in cornstarch to coat.
+        2. Heat vegetable oil in a pan and fry chicken until crispy, then set aside.
         3. In the same pan, stir-fry onions and bell pepper for 2-3 minutes.
         4. Add pineapple chunks and cook for another 2 minutes.
         5. In a bowl, mix ketchup, vinegar, soy sauce, and sugar to make the sauce.
         6. Pour the sauce over the vegetables and bring to a simmer.
-        7. Add the fried pork and toss everything together.
+        7. Add the fried chicken and toss everything together.
         8. Serve hot.
       `,
-    image: 'https://tasteasianfood.com/wp-content/uploads/2019/05/sweet-and-sour-pork-featured-image.jpg',
+    image: 'https://mymorningmocha.com/wp-content/uploads/2023/08/Sweet-And-Sour-Chicken-Recipe.jpg',
   },
   dish3: {
     name: 'Fried Rice',
@@ -82,7 +82,7 @@ const chineseFoodRecipes = {
         6. Stir in soy sauce, sesame oil, and green onions.
         7. Cook for an additional 2-3 minutes, then serve.
       `,
-    image: '	https://static.sooperchef.pk/topics/2018/06/Chicken-Shashlik-Recipe-550x375.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRajE9j7IkaNkA1f53Pnj5nF54HJbBQV4z3fbmDM_PvqA&s',
   },
   dish4: {
     name: 'Mapo Tofu',
@@ -135,7 +135,7 @@ const chineseFoodRecipes = {
         6. Add the fried chicken back into the pan and toss to coat in the sauce.
         7. Garnish with chopped green onions and serve hot.
       `,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMIp78_E7a9W6lMfAbVdr_SkycQK30WT4tsg&s',
+    image: 'https://marleyspoon.com/media/recipes/188863/main_photos/large/lunar_new_year_general_tso_s_chicken-0a45418f8f8c88546e062c71003416dd.jpeg',
   },
   dish6: {
     name: 'Chicken Chow Mein',
@@ -169,9 +169,9 @@ const chineseFoodRecipes = {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIwbrgg-G4pEcpobany2rblsEXFdJyjIMpHg&s',
   },
 };
-let id = 1;
-let accordiontarget = 5;
-let accordiontarget2 = 10;
+let id = 3;
+let accordiontarget = 6;
+let accordiontarget2 = 20;
 
 for (name in chineseFoodRecipes) {
   id++;

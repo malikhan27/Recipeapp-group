@@ -8,37 +8,49 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 
     <div class="row mt-md-3">
-        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-          <img src="assets/logo (1).png" alt="">
+        <div class="col-12 col-md-6 loginimage d-flex justify-content-center align-items-center">
+          <img src="assets/image-removebg.png" alt="">
         </div>
-        <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
-            <h1 class="mb-3 text-center">Login</h1>
-            <div class="d-flex flex-column gap-2 h-100 align-items-center justify-content-center w-75 py-5 login-form">
-                <label for="login-email" class="form-label">Email</label>
-                <input type="text" class="form-control w-75" id="login-email" name="Email" required>
-                <label for="login-pass" class="form-label">Password</label>
-                <input type="password" class="form-control w-75" id="login-pass" name="Password" required>
+        <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center mt-2 mt-md-0">
+            <div class="container mb-2">
+                <div class="row ">
+                  <div class="col-12 col-sm-12 col-md-12 col-xl-12">
+                    <h1 class="mt-2 text-center">login</h1>
+                    <hr>
+                    <div class=" fields  mb-2">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" placeholder="Enter Your Email" class="form-control" id="login-email"
+                        aria-describedby="emailHelp"><i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div class=" fields mb-2">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" placeholder="Enter your Password" class="form-control" id="login-pass">
+                      <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-outline-dark w-100 my-3" id="login-btn">Log in</button>
+                        <button type="submit" class=" btn btn-outline-dark  w-100  " id="google-btn"><img style="width: 30px; height: 30px;" src="assets/Google_Icons-09-512.webp" alt="">Sign-in with Google</button>
 
-
-                <div class="mt-1 d-flex flex-column gap-2 justify-content-center align-items-center">
-                    <button class=" btn btn-outline-dark" id="login-btn" type="button">Login</button>
-                    <h5>OR</h5>
-                    <button class=" btn btn-outline-dark " id="google-btn">
-                        <img style="height: 30px; width: 30px;" src="assets/Google_Icons-09-512.webp" alt="">Sign in
-                        with google</button>
-        </div>
-
+                      </div>
+                      <div class="text-center mt-1">
+                       <p>Dont have an account?</p> <a href="/signup.html" class="register">Register!</a>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
     </div>
 
 
-
+    <script src="https://kit.fontawesome.com/9ac5fe7ab7.js" crossorigin="anonymous"></script>
     <script type="module" src="config.js"></script>
     <script type="module" src="auth.js"></script>
     <script type="module" src="app.js"></script>
