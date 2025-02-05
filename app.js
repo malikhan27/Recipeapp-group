@@ -55,7 +55,7 @@ async function checkSession() {
       console.log(data)
       
     }
-    const authPages = ["/index.html", "/login.html", "/"];
+    const authPages = ["/index.html", "/login.html", "/signup.html", "/"];
     const currentPath = window.location.pathname;
     const isAuthPage = authPages.some((page) => page.includes(currentPath));
 
@@ -79,6 +79,9 @@ async function checkSession() {
 
 window.getSession= checkSession
 
+
+
 window.onload= getSession
 window.onload= userinfoGet()
 
+console.log(getSession)
