@@ -303,8 +303,4 @@ if (datecontent) {
   datecontent.textContent = new Date ().getFullYear ();
 }
 
-function tryplease (ali) {
-  console.log (ali);
-}
-
-tryplease ();
+window.onload= window.getSession
