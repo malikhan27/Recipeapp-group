@@ -22,41 +22,61 @@ async function loadPosts(){
             if(username){
             username.innerHTML=myId.name}
             console.log(myId)
-            let myPost = false
             postsData.forEach((posts)=>{
               let currentUser = usersMap[posts.UID]
              
               if(currentUser.userId === myId.uid){
-                myPost = true
-                console.log(posts)
-                if (post_container){
-                post_container.innerHTML+= 
-                  ` <div class="card post mb-3">
-                <div class="card-body">
-                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <div>
-                    <img src=${posts.imageUrl} alt="User Avatar"
-                    class="rounded-circle me-2" width="40" height="40">
-                     <h5 class="card-title mb-0">${currentUser.name}</h5>
+                if (post_container) {
+                  post_container.innerHTML += ` 
+              <div class="border border container-fluid w-75 my-3 py-1 rounded-3">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column rounded-circle">
+                       <div class="d-flex gap-2">
+                        <img class="rounded-circle" style="width:50px; height:50px;" src=${posts.imageUrl} alt="">
+                        <p class="mt-2">${new Date(posts.created_at).toLocaleString() }<p>
+                       </div>
+                        <h5 class="mt-2">${currentUser.name}</h5>
+                        
                     </div>
-              <div><button onclick=deleteMyPost(${posts.id})>DELETE</button>
+    
+    ${currentUser.userId === myId.uid?`<div class="mt-2"><button>delete</button>
+      </div>`:""}
+                    
                 </div>
-                                </div>
-                                <hr>
-                                <div>
-                                <p class="card-text">${posts.name}</p>
-                                <p class="card-text">${posts.ingredients}</p>
-                                <p class="card-text">${posts.methods}</p>
-                                </div>
-                                
-
-          ${posts.imageUrl!=null? `<div>
-                                     <img src=${posts.imageUrl} alt="Recipe Image"
-                                        class="card-img-top recipe-image mb-3"></div>` :""}
-                           
-                        </div>`
-                
-              }
+                <hr>
+                <div class="row">
+                ${posts.imageUrl!==null ? `<div class="col-12 col-md-6 h-75">
+                        <div class=" d-flex justify-content-center">
+                            <img class="w-100 h-100  rounded-4" src=${posts.imageUrl} alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 text-center text-content">
+                        <h3>RECIPE NAME</h3>
+                         <p>${posts.name}</p>
+                        <h4>INGREDIENTS</h4>
+                        <p>${posts.ingredients}</p>
+                        <h4>METHOD</h4>
+                        <p>${posts.methods}</p>
+                    </div>`
+                    :
+                    `<div class="col-12 text-center text-content">
+                        <h3>RECIPE NAME</h3>
+                         <p>${posts.name}</p>
+                        <h4>INGREDIENTS</h4>
+                        <p>${posts.ingredients}</p>
+                        <h4>METHOD</h4>
+                        <p>${posts.method}</p>
+                    </div>` }
+                   
+                    
+                </div>
+                <div class="d-flex mt-3 mb-1 justify-content-center">
+                    <div><button class=" btn btn-ouline-dark">favourites</button>
+    
+                    </div>
+                </div
+            </div>`;
+                }
             }
           }
             )
@@ -95,3 +115,4 @@ async function deleteMyPost(postId) {
   
 
 window.onload = loadPosts()
+window.onload= window.getSession
