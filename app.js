@@ -87,7 +87,7 @@ async function checkSession() {
 
     if (session) {
       if (isAuthPage) {
-        window.location.href = "/dashboardrecipe.html";
+        window.location.href = "/dashboard.html";
       }
     } else {
       if (!isAuthPage) {

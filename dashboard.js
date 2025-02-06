@@ -180,7 +180,9 @@ for (name in chineseFoodRecipes) {
   console.log (id);
   if (recipesdiv) {
     recipesdiv.innerHTML += `
-    <div class="col-12 col-md-4  d-flex mb-3 justify-content-center">
+    <div class="col-12 col-md-4  d-flex mb-3 justify-content-center" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">>
  <div class="card" style="width: 90%;">
   <img src=${chineseFoodRecipes[name].image} class="card-img-top" alt="...">
 
