@@ -163,6 +163,19 @@
     --bs-gradient: none !important;
 }
 
+.text-content{
+    background-color:#FEE0D6 !important;
+    color: #71604E !important;
+    h3{
+        color: #C4464A;
+    }
+}
+
+
+
+
+
+
 @media screen and (max-width:550px){
     .logo-text{
         color: #FEE0D6;
