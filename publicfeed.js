@@ -70,7 +70,7 @@ ${currentUser.userId === myId.uid?`<div class="mt-2"><button>delete</button>
                 
             </div>
             <div class="d-flex mt-3 mb-1 justify-content-center">
-                <div><button class="btn btn-outline-dark" >favourites</button>
+                <div><button class="btn btn-outline-dark logout" >favourites</button>
 
                 </div>
             </div

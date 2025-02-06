@@ -179,10 +179,8 @@ for (name in chineseFoodRecipes) {
   accordiontarget2++;
   console.log (id);
   if (recipesdiv) {
-    recipesdiv.innerHTML += `<div class="col-12 col-md-4  d-flex mb-3 justify-content-center" data-aos="fade-zoom-in"
-     data-aos-easing="ease-in-back"
-     data-aos-delay="300"
-     data-aos-offset="0">
+    recipesdiv.innerHTML += `<div class="col-12 col-md-4  d-flex mb-3 justify-content-center"  data-aos="flip-up"
+    >
  <div class="card" style="width: 90%;">
   <img src=${chineseFoodRecipes[name].image} class="card-img-top" alt="...">
 
