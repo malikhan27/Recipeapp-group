@@ -196,9 +196,6 @@ background: linear-gradient(342deg, rgba(252,198,206,1) 47%, rgba(255,255,255,1)
 
 
 @media screen and (max-width:400px)  {
-    .logo-text{
-        font-size: 20px;
-    }
     .btn-primary{
         background-color:#DE6E7E !important;
         border-color:#e65a6f !important;
@@ -218,30 +215,3 @@ background: linear-gradient(342deg, rgba(252,198,206,1) 47%, rgba(255,255,255,1)
        
        
     }  
-
-    .navbar-button {
-        padding: 5px 8px;
-        font-size: 12px;
-        font-weight: 600;
-        color: #fff;
-        background-color: #FEE0D6;
-        border: 2px solid #FEE0D6;
-        border-radius: 5px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    
-    /* Hover effect */
-    .navbar-button:hover {
-        color: #faebe7 !important;
-        background-color: #C4464A;
-        border-color: #C4464A;
-        a{
-            color: #faebe7;
-        }
-       
-    }
-
-  
