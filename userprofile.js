@@ -1,7 +1,7 @@
 let post_container = document.getElementById("feed-container")
 let username= document.getElementById("username") 
 let favoritesbtn=document.getElementById("Favourites")
-async function myloadPosts(){
+async function loadPosts(){
   try {
     const {data: postsData, error: postsError} = await supabase
     .from("posts")
@@ -17,14 +17,16 @@ async function myloadPosts(){
             let usersMap = {};
             usersData.forEach((user)=>{
               usersMap[user.userId] = user
+              console.log(usersMap)
             })
             
             var myId = JSON.parse(localStorage.getItem('currentuserinfo'))
-            if(username){
-            username.innerHTML=myId.name}
+           
             console.log(myId)
             postsData.forEach((posts)=>{
+              console.log(posts)
               let currentUser = usersMap[posts.UID]
+              console.log(currentUser)
              
               if(currentUser.userId === myId.uid){
                 if (post_container) {
@@ -146,6 +148,6 @@ async function deleteMyPost(postId) {
   
   
 
-window.onload = myloadPosts()
+window.onload = loadPosts()
 window.onload= window.getSession
 
