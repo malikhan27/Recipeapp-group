@@ -33,7 +33,6 @@ async function loadPosts(){
              
                 if (post_container) {
                   post_container.innerHTML += ` 
-                   <div class="text-center"><h1>MY RECIPES</h1><div>
               <div class="  container w-75 my-5 py-1 rounded-3">
                 <div class="d-flex justify-content-between">
                     <div class="d-flex flex-column rounded-circle">
