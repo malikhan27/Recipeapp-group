@@ -215,3 +215,26 @@ background: linear-gradient(342deg, rgba(252,198,206,1) 47%, rgba(255,255,255,1)
        
        
     }  
+
+    @media screen and (max-width:550px){
+        .logo-text{
+            color:#71604E ;
+            font-size: 20px !important;
+            letter-spacing: 3px !important
+        }
+
+        .navbar-button {
+            padding: 3px 5px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #FEE0D6;
+            border: 2px solid #FEE0D6;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+       
+    }

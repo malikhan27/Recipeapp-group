@@ -1,6 +1,7 @@
 let post_container = document.getElementById("feed-container")
 let username= document.getElementById("username") 
-async function loadPosts(){
+let favoritesbtn=document.getElementById("Favourites")
+async function myloadPosts(){
   try {
     const {data: postsData, error: postsError} = await supabase
     .from("posts")
@@ -28,6 +29,7 @@ async function loadPosts(){
               if(currentUser.userId === myId.uid){
                 if (post_container) {
                   post_container.innerHTML += ` 
+                   <div class="text-center"><h1>MY RECIPES</h1><div>
               <div class="  container w-75 my-5 py-1 rounded-3">
                 <div class="d-flex justify-content-between">
                     <div class="d-flex flex-column rounded-circle">
@@ -41,7 +43,7 @@ async function loadPosts(){
                         
                     </div>
     
-    ${currentUser.userId === myId.uid?`<div class="mt-4"><button onclick=deleteMyPost(${posts.id}) class= " btn btn-danger text-light"><i class="fa-solid fa-bucket"></i></button>
+    ${currentUser.userId === myId.uid?`<div class="mt-4"><button onclick=deleteMyPost(${posts.id}) class= " btn btn-danger border border-light text-light"><i class="fa-solid fa-bucket"></i></button>
       </div>`:""}
                     
                 </div>
@@ -82,11 +84,6 @@ async function loadPosts(){
                    
                     
                 </div>
-                <div class="d-flex mt-3 mb-1 justify-content-center">
-                    <div><button class="btn btn-danger border border-light" >❤ Add to Favorites</button>
-    
-                    </div>
-                </div
             </div>`;
                 }
             }
@@ -103,28 +100,52 @@ async function loadPosts(){
 }
 
 async function deleteMyPost(postId) {
-    try {
-      const { data, error } = await supabase
-        .from("posts")
-        .delete()
-        .eq("id", postId)
-        .select();
-  
-      if (error) throw error;
-  
-      if (data) {
-        post_container.innerHTML = "";
+  try {
+    Swal.fire({
+      title: "Are you sure want to delete the Post",
+      showCancelButton: true,
+      confirmButtonText: "Delete",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const { data:postdeletedata, error:postdeleteerror } = await supabase
+          .from("posts")
+          .delete()
+          .eq("id", postId)
+          .select();
+
+        if (postdeleteerror) throw postdeleteerror;
+      
+
+        if(postdeletedata){
+          post_container.innerHTML=""
+          loadPosts()
+          Swal.fire({
+            icon: 'success' ,
+            title: 'Post Deleted Succesfully '
+          })
+
+          
+        }
+        
+       
+
       }
-    } catch (error) {
-      console.log(error);
-    }
-    finally{
-        loadPosts();
-    }
+    });
+  } catch (error) {
+    console.log(error);
   }
+   }
+   
+   
+  
+
+
+
   
   window.deleteMyPost = deleteMyPost;
   
+  
 
-window.onload = loadPosts()
+window.onload = myloadPosts()
 window.onload= window.getSession
+

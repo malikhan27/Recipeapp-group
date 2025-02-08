@@ -217,9 +217,8 @@ for (name in chineseFoodRecipes) {
 }
 
 async function dataEntry () {
-  console.log (
-    `${recipename.value} ${recipeingre.value} ${recipemethod.value} `
-  );
+  document.getElementById("loader").classList.remove("d-none")
+
   let data = localStorage.getItem ('currentuserinfo');
   data = JSON.parse (data);
   try {
@@ -232,8 +231,10 @@ async function dataEntry () {
         UID: data.uid,
       })
       .select ();
+      if(posterror) throw posterror
 
     if (postdata) {
+      
       console.log (postdata[0].id);
       if (post_file.files.length > 0) {
         let imgfile=post_file.files[0]
@@ -264,29 +265,9 @@ async function dataEntry () {
   .eq('id', postdata[0].id)
   .select()
 
-    } catch (error) {
-      
-    }
-  }
-
-            
-           } catch (error) {
-            
-           }
-
-          }
-
-        } catch (error) {
-          
-        }
-
-
-     
-      }
-    }
-  } catch (error) {
-    console.log (error);
-  } finally {
+  if(updatetableerror) throw updatetableerror
+  if(updatetabledata){
+    document.getElementById("loader").classList.remove("d-none")
     Swal.fire ({
       title: 'POST UPDATED Successfully!',
       icon: 'success',
@@ -294,6 +275,50 @@ async function dataEntry () {
     });
     window.location.href="userprofile.html"
   }
+
+    } catch (error) {
+      document.getElementById("loader").classList.remove("d-none")
+    }
+  }
+
+            
+           } catch (error) {
+            Swal.fire({
+              title: `${error.message}`,
+              icon: "error",
+              draggable: true,
+            });
+           }
+
+          }
+
+        } catch (error) {
+          Swal.fire({
+            title: `${error.message}`,
+            icon: "error",
+            draggable: true,
+          });
+        }
+
+
+     
+      }else{
+        Swal.fire ({
+          title: 'POST UPDATED Successfully!',
+          icon: 'success',
+          draggable: true,
+        });
+        window.location.href="userprofile.html"
+      }
+    }
+  } catch (error) {
+    Swal.fire({
+      title: `${error.message}`,
+      icon: "error",
+      draggable: true,
+    });
+    console.log (error);
+  } 
 }
 
 if (postbtn) {

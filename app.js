@@ -2,36 +2,14 @@
 
 
 async function userinfoGet() {
+  localStorage.clear
   try {
     const {
       data: { user },
     } = await supabase.auth.getUser();
     if (user) {
-    // if (user.user_metadata) {
-
-      
-    //   let currentuserinfo = {
-    //     uid: user.id,
-    //     name:user.user_metadata.name,
-    //     email: user.email,
-    //   };
-      
-    //   localStorage.setItem("currentuserinfo",JSON.stringify(currentuserinfo));
-    //   try {
-    //     const { data: userData, error: userError } = await supabase
-    //       .from("users")
-    //       .insert({
-    //         userId:user.id,
-    //         email: user.email,
-    //         name: user.user_metadata.name,
-    //       })
-    //       .select();
-    //     if (userError) throw userError;
-       
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // }else{
+      console.log(user)
+   
       try {
         const { data : userdata, error } = await supabase
       .from('users')
@@ -108,6 +86,7 @@ async function checkSession() {
 }
 
 window.getSession= checkSession
+window.userinfoGet=userinfoGet
 
 
 
