@@ -2,8 +2,7 @@
 
 
 async function userinfoGet() {
-  localStorage.clear
-  try {
+  try{
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -19,6 +18,7 @@ async function userinfoGet() {
     if(error) throw error
     
       if(userdata){
+        console.log(userdata)
       let currentuserinfo = {
       uid: user.id,
       name:userdata[0].name,
